@@ -1,6 +1,6 @@
 # NobaMacro 2.4 — Nobara Official / KDE Plasma
 
-Mouse and keyboard recording with timing, repeated playback, adjustable speed, a physical F9 emergency stop, and automatic pointer positioning.
+Mouse and keyboard recording with timing, repeated playback, adjustable speed, F9 emergency stop, and automatic pointer positioning.
 
 ## Support development
 

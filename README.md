@@ -8,13 +8,9 @@ NobaMacro is free and open source. If it saves you time, you can optionally [sup
 
 ## Update and launch
 
-**Version 2.4 adds a Settings tab and the Developed by Joint footer.** Choose separate F1–F12 keys for Record/Stop recording, Stop, and Play. Defaults are F8, F9 and F10. F9 always remains an emergency stop. Click **Save settings** to apply and remember your choices. Duplicate keys are rejected.
+**Version 2.4 adds a Settings tab .** Choose separate F1–F12 keys for Record/Stop recording, Stop, and Play. Defaults are F8, F9 and F10. F9 always remains an emergency stop. Click **Save settings** to apply. Duplicate keys are rejected.
 
 Global shortcuts use KDE Plasma while NobaMacro is open. Turn them off to keep idle Record/Play shortcuts local to this window; physical stop controls still work globally during operations. The Record key finishes an active recording; the Stop key ends recording or playback. Selected control keys are excluded from capture and playback, including when opening older macros. Pick keys your target application does not need. KDE shortcut conflicts may require selecting another key. Preferences live in `~/.config/NobaMacro/settings.json` (or under `XDG_CONFIG_HOME`).
-
-The new shortcut integration requires a live Nobara/KDE test. No additional packages are needed when upgrading from 2.3. Previous fixes for repeated recordings, isolated KDE processes, stop-click removal and pointer alignment are retained.
-
-Close the old app and extract this ZIP into a new folder. Keep all the included Python files together. **If upgrading from version 1, record those macros again:** version 1 files have no starting cursor position and may contain the old terminating Stop-button click. Those facts cannot be reconstructed reliably from old raw mouse deltas. Version 2 recordings do not need re-recording for this patch.
 
 Install the dependencies, including the KDE integration packages:
 
@@ -99,12 +95,6 @@ Recordings contain typed input, including sensitive text typed while recording. 
 ```bash
 python3 -m unittest -v
 ```
-
-Tests cover Stop-click removal, F9 removal, physical-only stop confirmation, three repetitions, position restoration before every repeat, simulated pointer speeds, monitor routing/layout checks, cancellation and key/button cleanup.
-
-Development and portable verification were performed on Windows. Real KDE D-Bus, evdev/uinput hardware and desktop integration still need a Nobara smoke test; this is not a claim of hardware-tested compatibility.
-
-Suggested smoke test: record a harmless click/type sequence and stop with the GUI button; choose 3 repetitions; move the mouse elsewhere before Play. Check that every loop returns to the saved point and all 3 finish. Repeat with F9 as the recording stop. Finally test physical F9 during alignment and while a key is held.
 
 ## Source and references
 
